@@ -1,6 +1,7 @@
 const express = require('express'),
       cookieParser = require('cookie-parser'),
-      pug = require('pug');
+      pug = require('pug'),
+      session = require('express-session');
 
 
 var app = express();

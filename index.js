@@ -1,14 +1,15 @@
-const express = require('express');
+const express = require('express'),
+      cookieParser = require('cookie-parser');
 
-var cookieParser = require('cookie-parser');
 
 var app = express();
 
-app.use(cookieParser());
 app.use(express.static('public'));
+app.use(cookieParser());
 
 app.get('/', (req, res) => {
    res.sendFile(__dirname + '/index.html');
+   console.log(req.cookies);
 });
 
 app.listen(3000, () => {
